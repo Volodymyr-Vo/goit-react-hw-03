@@ -1,0 +1,11 @@
+.total,
+.positive {
+  font-weight: 700;
+}
+
+.feedback,
+.feedbackList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
