@@ -3,10 +3,16 @@ import css from "../ContactList/ContactList.module.css";
 
 export default function ContactList({ contacts, onDelete }) {
   return (
-    <ul className={css.list}>
+    <div className={css.list}>
       {contacts.map(({ id, name, number }) => (
-        <Contact key={id} name={name} number={number} />
+        <Contact
+          key={id}
+          id={id}
+          name={name}
+          number={number}
+          onDelete={onDelete}
+        />
       ))}
-    </ul>
+    </div>
   );
 }

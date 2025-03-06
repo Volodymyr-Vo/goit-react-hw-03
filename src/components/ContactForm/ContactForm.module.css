@@ -1,7 +1,25 @@
-.description {
+.form {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 15px;
+  width: 280px;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.error {
+  color: rgb(221, 137, 137);
 }
