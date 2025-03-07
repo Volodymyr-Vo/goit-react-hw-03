@@ -13,6 +13,12 @@ export default function App() {
 
   const [filter, setFilter] = useState("");
 
+  useEffect(() => {
+    if (contacts.length > 0) {
+      localStorage.setItem("contacts", JSON.stringify(contacts));
+    }
+  }, [contacts]);
+
   const addContact = (newContact) => {
     setContacts((prevContacts) => [...prevContacts, newContact]);
   };
@@ -23,12 +29,6 @@ export default function App() {
     );
   };
 
-  useEffect(() => {
-    if (contacts.length > 0) {
-      localStorage.setItem("contacts", JSON.stringify(contacts));
-    }
-  }, [contacts]);
-
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
@@ -37,7 +37,7 @@ export default function App() {
     <div>
       <h1>Phonebook</h1>
       <ContactForm onAddContact={addContact} />
-      <SearchBox value={filter} onChange={setFilter} />
+      <SearchBox value={filter} onChange={(e) => setFilter(e.target.value)} />
       <ContactList contacts={filteredContacts} onDelete={deleteContact} />
     </div>
   );
